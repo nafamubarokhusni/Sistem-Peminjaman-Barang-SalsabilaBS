@@ -91,8 +91,8 @@
 					<?php
 						include 'config.php';
 
-						$query = mysql_query("SELECT * FROM tbl_barang ORDER BY id ASC");
-						while ($data = mysql_fetch_array($query)) {
+						$query = mysqli_query($conn, "SELECT * FROM tbl_barang ORDER BY id ASC");
+						while ($data = mysqli_fetch_array($query)) {
 					?>
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm" style="margin-bottom: 1.5rem;">

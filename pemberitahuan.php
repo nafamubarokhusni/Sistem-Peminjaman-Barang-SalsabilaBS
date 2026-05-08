@@ -19,9 +19,9 @@
 						<?php
 							include 'config.php';
 							$username = $_GET['username'];
-							$query = mysql_query("SELECT * FROM pemberitahuan WHERE username='$username' ORDER BY timestamp DESC");
-							if(mysql_num_rows($query) > 0){
-								while ($data = mysql_fetch_array($query)) {
+							$query = mysqli_query($conn, "SELECT * FROM pemberitahuan WHERE username='$username' ORDER BY timestamp DESC");
+							if(mysqli_num_rows($query) > 0){
+								while ($data = mysqli_fetch_array($query)) {
 									if($data['status'] == 'terima'){
 										$alert = "success";
 									}else if($data['status'] == 'tolak'){

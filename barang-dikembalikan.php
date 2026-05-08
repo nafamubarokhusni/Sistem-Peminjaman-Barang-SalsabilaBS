@@ -36,12 +36,12 @@
 					<tbody>
 						<?php
 							include 'config.php';
-							$query = mysql_query("SELECT * FROM tbl_transaksi WHERE peminjam='$username' ORDER BY id DESC");
-							if(mysql_num_rows($query) == 0){
+							$query = mysqli_query($conn, "SELECT * FROM tbl_transaksi WHERE peminjam='$username' ORDER BY id DESC");
+							if(mysqli_num_rows($query) == 0){
 								echo "<tr><td colspan='6'>belum ada data!</td></tr>";
 							}else{
 								$no = 1;
-								while ($data = mysql_fetch_array($query)) {
+								while ($data = mysqli_fetch_array($query)) {
 						?>
 									<tr>
 										<td><?php echo $no;?></td>

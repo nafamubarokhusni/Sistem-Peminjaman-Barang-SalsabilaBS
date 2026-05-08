@@ -6,7 +6,7 @@
 		$password 	= md5($_POST['password']);
 		$level		= $_POST['level'];
 		//echo $nama." ".$username." ".$password." ".$level;
-		if(mysql_query("INSERT INTO user (nama, username, password, level) VALUES ('$nama', '$username', '$password', '$level')")){
+		if(mysqli_query($conn, "INSERT INTO user (nama, username, password, level) VALUES ('$nama', '$username', '$password', '$level')")){
 			echo "<script>alert('Berhasil Register');</script>";
 			header("location: index.php");
 		}

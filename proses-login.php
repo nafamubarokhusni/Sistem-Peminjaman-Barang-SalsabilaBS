@@ -5,9 +5,9 @@
 		$username = $_POST['username'];
 		$password = md5($_POST['password']);
 
-		$query_username = mysql_query("SELECT * FROM user WHERE username = '$username'");
+		$query_username = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
 		if($query_username){
-			$data = mysql_fetch_array($query_username);
+			$data = mysqli_fetch_array($query_username);
 			if($password == $data['password']){
 				echo $_SESSION['username'] = $data['username'];
 				echo $_SESSION['name'] = $data['nama'];

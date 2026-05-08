@@ -3,7 +3,7 @@
     include '../config.php';
     if(isset($_GET['opsi']) && $_GET['opsi'] == 'hapus' && isset($_GET['id'])){
         $id           = $_GET['id']; 
-        $query_delete = mysql_query("DELETE FROM tbl_barang WHERE id='$id'");
+        $query_delete = mysqli_query($conn, "DELETE FROM tbl_barang WHERE id='$id'");
         if($query_delete){
             echo "<script>alert('Berhasil Dihapus');</script>";
             echo "<script>window.location('index.php');</script>";
@@ -111,9 +111,9 @@
                     <tbody>
                     <?php
                         include '../config.php';
-                        $query = mysql_query("SELECT * FROM tbl_barang ORDER BY id ASC");
+                        $query = mysqli_query($conn, "SELECT * FROM tbl_barang ORDER BY id ASC");
                         $no =1;
-                        while ($data=mysql_fetch_array($query)) {
+                        while ($data=mysqli_fetch_array($query)) {
                     ?>
                         <tr>
                             <td><?php echo $no;?></td>

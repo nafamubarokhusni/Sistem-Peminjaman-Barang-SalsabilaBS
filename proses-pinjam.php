@@ -3,8 +3,8 @@
 	if(!empty($_GET['username']) && $_GET['username'] != ""){
 		//echo $_GET['username'];
 		$id_barang 		= $_GET['id_barang'];
-		$search_barang 	= mysql_query("SELECT * FROM tbl_barang WHERE id='$id_barang'");
-		$data 			= mysql_fetch_array($search_barang);
+		$search_barang 	= mysqli_query($conn, "SELECT * FROM tbl_barang WHERE id='$id_barang'");
+		$data 			= mysqli_fetch_array($search_barang);
 		$nama_barang	= $data['nama_barang'];
 
 ?>

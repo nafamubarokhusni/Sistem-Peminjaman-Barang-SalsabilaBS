@@ -17,7 +17,7 @@
             if(($extension == "jpg" || $extension == "jpeg" || $extension == "gif" || $extension == "png") && ($file_type == "image/jpeg" || $file_type == "image/png" || $file_type=="image/gif") && $extension == $file_size<=$max_size){
                 $location = "../assets/img/uploads/";
                 if (move_uploaded_file($tmp_name, $location.$file_name)) {
-                    if(mysql_query("UPDATE tbl_barang SET nama_barang='$nama_barang', gambar_barang='$file_name', stok_barang='$stok_barang' WHERE id='$id'")){
+                    if(mysqli_query($conn, "UPDATE tbl_barang SET nama_barang='$nama_barang', gambar_barang='$file_name', stok_barang='$stok_barang' WHERE id='$id'")){
                         echo "<script>alert('Berhasil Disimpan');</script>";
                         echo "<script>window.location('index.php');</script>";
                     }else{
@@ -34,8 +34,8 @@
 
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
-		$query = mysql_query("SELECT * FROM tbl_barang WHERE id='$id'");
-		$data  = mysql_fetch_array($query);
+		$query = mysqli_query($conn, "SELECT * FROM tbl_barang WHERE id='$id'");
+		$data  = mysqli_fetch_array($query);
 		$nama_barang   = $data['nama_barang'];
 		$gambar_barang = $data['gambar_barang'];
 		$stok_barang   = $data['stok_barang'];

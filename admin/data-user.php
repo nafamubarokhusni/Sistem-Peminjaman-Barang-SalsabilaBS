@@ -94,8 +94,8 @@
                     <tbody>
                         <?php
                             include '../config.php';
-                            $query = mysql_query("SELECT * FROM user ORDER BY id");
-                            while ($data=mysql_fetch_array($query)) {
+                            $query = mysqli_query($conn, "SELECT * FROM user ORDER BY id");
+                            while ($data=mysqli_fetch_array($query)) {
                         ?>
                             <tr>
                                 <td><?php echo $data['nama'];?></td>

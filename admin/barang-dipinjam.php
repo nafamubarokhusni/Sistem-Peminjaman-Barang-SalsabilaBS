@@ -99,10 +99,10 @@
                     <tbody>
                         <?php
                             include '../config.php';
-                            $query = mysql_query("SELECT * FROM tbl_pinjam ORDER BY  id DESC ");
+                            $query = mysqli_query($conn, "SELECT * FROM tbl_pinjam ORDER BY  id DESC ");
                             if($query){
                                 $no = 1;
-                                while ($data=mysql_fetch_array($query)) {
+                                while ($data=mysqli_fetch_array($query)) {
                                     $id          = $data['id'];
                                     $nama_barang = $data['nama_barang'];
                                     $peminjam    = $data['peminjam'];
@@ -120,7 +120,7 @@
                                     <td><?php echo $tgl_pinjam;?></td>
                                     <td><?php echo $tgl_kembali;?></td>
                                     <td>
-                                        <a class="btn btn-success btn-sm" href="proses-pinjam.php?mode=terima&id=<?php echo $id;?>">
+                                        <a class="btn btn-success btn-sm" href="proses-kembali.php?mode=direct&id=<?php echo $id;?>">
                                             <i class="fa fa-check"></i>
                                             Sudah Kembali
                                         </a>    

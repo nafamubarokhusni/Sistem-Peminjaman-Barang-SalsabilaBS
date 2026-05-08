@@ -17,7 +17,7 @@
             if(($extension == "jpg" || $extension == "jpeg" || $extension == "gif" || $extension == "png") && ($file_type == "image/jpeg" || $file_type == "image/png" || $file_type=="image/gif") && $extension == $file_size<=$max_size){
                 $location = "../assets/img/uploads/";
                 if (move_uploaded_file($tmp_name, $location.$file_name)) {
-                    if(mysql_query("INSERT INTO tbl_barang (nama_barang, gambar_barang, stok_barang) VALUES ('$nama_barang', '$file_name', '$stok_barang')")){
+                    if(mysqli_query($conn, "INSERT INTO tbl_barang (nama_barang, gambar_barang, stok_barang) VALUES ('$nama_barang', '$file_name', '$stok_barang')")){
                         echo "<script>alert('Berhasil Ditambahkan');</script>";
                         echo "<script>window.location('index.php');</script>";
                     }else{

@@ -98,10 +98,10 @@
                     <tbody>
                         <?php
                             include '../config.php';
-                            $query = mysql_query("SELECT * FROM tbl_request ORDER BY  id DESC ");
+                            $query = mysqli_query($conn, "SELECT * FROM tbl_request ORDER BY  id DESC ");
                             if($query){
                                 $no = 1;
-                                while ($data=mysql_fetch_array($query)) {
+                                while ($data=mysqli_fetch_array($query)) {
                                     $id          = $data['id'];
                                     $nama_barang = $data['nama_barang'];
                                     $peminjam    = $data['peminjam'];

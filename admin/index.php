@@ -74,8 +74,8 @@
                         <h4 class="mb-0">
                             <span class="count">
                                 <?php
-                                    $query_user = mysql_query("SELECT COUNT(*) AS total_user FROM user");
-                                    $total_user = mysql_fetch_array($query_user);
+                                    $query_user = mysqli_query($conn, "SELECT COUNT(*) AS total_user FROM user");
+                                    $total_user = mysqli_fetch_array($query_user);
                                     echo $total_user['total_user'];
                                 ?>  
                             </span>
@@ -98,8 +98,8 @@
                         <h4 class="mb-0">
                             <span class="count">
                                 <?php
-                                    $query_barang = mysql_query("SELECT SUM(stok_barang) AS stok FROM tbl_barang");
-                                    $total_barang = mysql_fetch_array($query_barang);
+                                    $query_barang = mysqli_query($conn, "SELECT SUM(stok_barang) AS stok FROM tbl_barang");
+                                    $total_barang = mysqli_fetch_array($query_barang);
                                     echo $total_barang['stok'];
                                 ?>
                             </span>
@@ -121,8 +121,8 @@
                         <h4 class="mb-0">
                             <span class="count">
                                 <?php
-                                    $query_request = mysql_query("SELECT COUNT(*) AS total_req_pinjam FROM tbl_request");
-                                    $total_request = mysql_fetch_array($query_request);
+                                    $query_request = mysqli_query($conn, "SELECT COUNT(*) AS total_req_pinjam FROM tbl_request");
+                                    $total_request = mysqli_fetch_array($query_request);
                                     echo $total_request['total_req_pinjam'];
                                 ?>  
                             </span>
@@ -145,8 +145,8 @@
                         <h4 class="mb-0">
                             <span class="count">
                                 <?php
-                                    $query_barang_pinjam = mysql_query("SELECT SUM(jml_barang) AS jml_barnag FROM tbl_pinjam");
-                                    $total_barang_pinjam = mysql_fetch_array($query_barang_pinjam);
+                                    $query_barang_pinjam = mysqli_query($conn, "SELECT SUM(jml_barang) AS jml_barnag FROM tbl_pinjam");
+                                    $total_barang_pinjam = mysqli_fetch_array($query_barang_pinjam);
                                     echo $total_barang_pinjam['jml_barnag'];
                                 ?>
                             </span>
