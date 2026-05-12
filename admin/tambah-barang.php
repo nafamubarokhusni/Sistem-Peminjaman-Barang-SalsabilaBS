@@ -14,7 +14,7 @@
 
         if(isset($file_name) && !empty($file_name)){
            // echo $file_name." ".$file_type." ".$file_size." ".$nama_barang." ".$stok_barang." ".$extension;
-            if(($extension == "jpg" || $extension == "jpeg" || $extension == "gif" || $extension == "png") && ($file_type == "image/jpeg" || $file_type == "image/png" || $file_type=="image/gif") && $extension == $file_size<=$max_size){
+            if(($extension == "jpg" || $extension == "jpeg" || $extension == "gif" || $extension == "png" || $extension == "webp") && ($file_type == "image/jpeg" || $file_type == "image/png" || $file_type == "image/gif" || $file_type == "image/webp") && $file_size<=$max_size){
                 $location = "../assets/img/uploads/";
                 if (move_uploaded_file($tmp_name, $location.$file_name)) {
                     if(mysqli_query($conn, "INSERT INTO tbl_barang (nama_barang, gambar_barang, stok_barang) VALUES ('$nama_barang', '$file_name', '$stok_barang')")){
@@ -111,7 +111,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="gambar" class="form-control-label">Upload Foto Barang</label>
-                                <input type="file" id="gambar" name="gambar_barang" class="form-control">
+                                <input type="file" id="gambar" name="gambar_barang" class="form-control" accept="image/jpeg,image/png,image/gif,image/webp">
                             </div>
                             <div class="form-group">
                                 <label for="stok" class=" form-control-label">Jumlah Barang</label>

@@ -1,0 +1,21 @@
+{
+    "name": "salsabilabs/sistem-peminjaman-barang",
+    "description": "Sistem Peminjaman Barang Sekolah",
+    "type": "project",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

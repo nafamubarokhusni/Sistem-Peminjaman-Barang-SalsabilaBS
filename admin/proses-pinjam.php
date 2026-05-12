@@ -11,6 +11,7 @@
 		$id_request  	 	 = $data_request['id'];
 		$nama_barang_request = $data_request['nama_barang'];
 		$peminjam_request 	 = $data_request['peminjam'];
+		$username_request 	 = $data_request['username'];
 		$level_request		 = $data_request['level'];
 		$jml_barang_request  = $data_request['jml_barang'];
 		$tgl_pinjam_request  = $data_request['tgl_pinjam'];
@@ -23,10 +24,10 @@
 			if($data_search_barang){
 				$update_stok = mysqli_query($conn, "UPDATE tbl_barang SET stok_barang = '$stok_barang' WHERE nama_barang = '$nama_barang_request'");
 				if($update_stok){
-					if(mysqli_query($conn, "INSERT INTO tbl_pinjam (nama_barang, peminjam, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang_request', '$peminjam_request', '$level_request', '$jml_barang_request', '$tgl_pinjam_request', '$tgl_kembali_request')")){
+					if(mysqli_query($conn, "INSERT INTO tbl_pinjam (nama_barang, peminjam, username, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang_request', '$peminjam_request', '$username_request', '$level_request', '$jml_barang_request', '$tgl_pinjam_request', '$tgl_kembali_request')")){
 						if(mysqli_query($conn, "DELETE FROM tbl_request WHERE id = '$id_request'")){
-							$konten = "Permintaan Peminjaman Barang Anda Telah di Terima. ".$jml_barang_request." buah ".$nama_barang_request.". Username: ".$peminjam_request.". Silahkan ke bagian Sarpras untuk mengampil barang";
-							if(mysqli_query($conn, "INSERT INTO pemberitahuan (username, konten, status) VALUES ('$peminjam_request', '$konten', 'terima')")){
+							$konten = "Permintaan Peminjaman Barang Anda Telah di Terima. ".$jml_barang_request." buah ".$nama_barang_request.". Username: ".$username_request.". Silahkan ke bagian Sarpras untuk mengampil barang";
+							if(mysqli_query($conn, "INSERT INTO pemberitahuan (username, konten, status) VALUES ('$username_request', '$konten', 'terima')")){
 								echo "<script>alert('Berhasil Menerima Permintaan');</script>";
 								echo "<script>window.history.back();</script>";
 							}else{
@@ -47,8 +48,8 @@
 
 		}else if($_GET['mode'] == "tolak"){
 			if(mysqli_query($conn, "DELETE FROM tbl_request WHERE id = '$id_request'")){
-				$konten = "Maaf! Permintaan Peminjaman Barang Anda di Tolak. ".$jml_barang_request." buah ".$nama_barang_request.". Username: ".$peminjam_request;
-				if(mysqli_query($conn, "INSERT INTO pemberitahuan (username, konten, status) VALUES ('$peminjam_request', '$konten', 'tolak')")){
+				$konten = "Maaf! Permintaan Peminjaman Barang Anda di Tolak. ".$jml_barang_request." buah ".$nama_barang_request.". Username: ".$username_request;
+				if(mysqli_query($conn, "INSERT INTO pemberitahuan (username, konten, status) VALUES ('$username_request', '$konten', 'tolak')")){
 					echo "<script>alert('Berhasil Menolak Permintaan');</script>";
 					echo "<script>window.history.back();</script>";
 				}else{

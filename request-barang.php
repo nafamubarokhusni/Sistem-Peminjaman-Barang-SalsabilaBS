@@ -8,7 +8,7 @@
 		$jml_barang 		= $_POST['jml_barang'];
 		$tgl_pinjam 		= $_POST['tgl_pinjam'];
 		$tgl_kembali 		= $_POST['tgl_kembali'];
-		$query_insert_req   = mysqli_query($conn, "INSERT INTO tbl_request (nama_barang, peminjam, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang', '$username', '$level', '$jml_barang', '$tgl_pinjam', '$tgl_kembali')");
+		$query_insert_req   = mysqli_query($conn, "INSERT INTO tbl_request (nama_barang, peminjam, username, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang', '$nama_peminjam', '$username', '$level', '$jml_barang', '$tgl_pinjam', '$tgl_kembali')");
 		if($query_insert_req){
 			//echo $username."<br>".$nama_peminjam."<br>".$nama_barang."<br>".$level."<br>".$jml_barang."<br>".$tgl_pinjam."<br>".$tgl_kembali;
 ?>

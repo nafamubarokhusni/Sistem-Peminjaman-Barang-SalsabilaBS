@@ -1,5 +1,16 @@
 <?php
     session_start();
+    include '../config.php';
+
+    // --- Hapus User ---
+    if (isset($_GET['hapus'])) {
+        $id = (int)$_GET['hapus'];
+        if (mysqli_query($conn, "DELETE FROM user WHERE id='$id'")) {
+            echo "<script>alert('User berhasil dihapus.'); window.location.href='data-user.php';</script>";
+        } else {
+            echo "<script>alert('Gagal menghapus user.'); window.location.href='data-user.php';</script>";
+        }
+    }
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -93,7 +104,6 @@
                     </thead>
                     <tbody>
                         <?php
-                            include '../config.php';
                             $query = mysqli_query($conn, "SELECT * FROM user ORDER BY id");
                             while ($data=mysqli_fetch_array($query)) {
                         ?>
@@ -102,14 +112,16 @@
                                 <td><?php echo $data['username'];?></td>
                                 <td><?php echo $data['level'];?></td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm">
+                                    <a href="javascript:void(0);"
+                                       onclick="if(confirm('Hapus user ini?')) window.location.href='data-user.php?hapus=<?php echo $data['id']; ?>';"
+                                       class="btn btn-danger btn-sm">
                                         <i class="fa fa-times"></i>
                                         Hapus
-                                    </button>
-                                    <button class="btn btn-info btn-sm"> 
+                                    </a>
+                                    <a href="edit-user.php?id=<?php echo $data['id']; ?>" class="btn btn-info btn-sm">
                                         <i class="fa fa-pencil"></i>
                                         Edit
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                         <?php
