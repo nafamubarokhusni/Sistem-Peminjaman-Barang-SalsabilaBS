@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require_once 'auth_check.php';
     include '../config.php';
 
     // --- Handle POST: Edit User ---

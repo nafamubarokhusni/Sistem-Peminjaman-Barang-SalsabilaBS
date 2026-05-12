@@ -11,6 +11,7 @@
 			if($password == $data['password']){
 				echo $_SESSION['username'] = $data['username'];
 				echo $_SESSION['name'] = $data['nama'];
+				$_SESSION['level'] = $data['level'];
 				if($data['level'] == 'admin'){
 					header('location: admin/index.php');
 				}else{

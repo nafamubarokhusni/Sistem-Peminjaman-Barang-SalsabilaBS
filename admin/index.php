@@ -1,9 +1,6 @@
 <?php
-    session_start();
+    require_once 'auth_check.php';
     include '../config.php';
-    if(!isset($_SESSION['username'])){
-        header("location: ../index.php");
-    }
 ?>
 <!doctype html>
 

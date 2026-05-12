@@ -1,4 +1,5 @@
 <?php
+	require_once 'auth_check.php';
 	include '../config.php';
 	if(isset($_GET['mode']) && !empty($_GET['mode'])){
 		$id = $_GET['id'];
