@@ -82,6 +82,7 @@ CREATE TABLE `tbl_pinjam` (
   `id` int(11) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `level` varchar(50) NOT NULL,
   `jml_barang` int(50) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
@@ -98,6 +99,7 @@ CREATE TABLE `tbl_request` (
   `id` int(11) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `level` varchar(50) NOT NULL,
   `jml_barang` int(11) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
@@ -114,6 +116,7 @@ CREATE TABLE `tbl_req_kembali` (
   `id` int(11) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `level` varchar(50) NOT NULL,
   `jml_barang` int(11) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
@@ -130,6 +133,7 @@ CREATE TABLE `tbl_transaksi` (
   `id` int(11) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `level` varchar(50) NOT NULL,
   `jml_barang` int(11) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
@@ -140,15 +144,15 @@ CREATE TABLE `tbl_transaksi` (
 -- Dumping data untuk tabel `tbl_transaksi`
 --
 
-INSERT INTO `tbl_transaksi` (`id`, `nama_barang`, `peminjam`, `level`, `jml_barang`, `tgl_pinjam`, `tgl_kembali`) VALUES
-(1, 'Terminal', 'budi_kun', 'XI RPL 2', 10, '12 November 2018 - 07:30 ', '12 November 2018 - 16:00 '),
-(2, 'Terminal', 'adlubagus94', 'XII RPL 1', 2, '10 November 2018 - 15:00 ', '10 November 2018 - 16:00 '),
-(3, 'Terminal', 'bagusi', 'X TKJ 3', 2, '12 November 2018 - 12:35 ', '12 November 2018 - 16:10 '),
-(4, 'LCD', 'bagusi', 'X TKJ 3', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
-(5, 'LCD', 'budi_kun', 'XI RPL 2', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
-(6, 'LCD', 'adlubagus94', 'XII RPL 1', 1, '12 November 2018 - 07:30 ', '12 November 2018 - 10:00 '),
-(7, 'Speaker kecil', 'adlubagus94', 'XII RPL 1', 2, '13 November 2018 - 10:00 ', '13 November 2018 - 12:00 '),
-(8, 'LCD', 'usertest123', 'xii rpl', 1, '20 November 2018 - 16:00 ', '21 November 2018 - 13:25 ');
+INSERT INTO `tbl_transaksi` (`id`, `nama_barang`, `peminjam`, `username`, `level`, `jml_barang`, `tgl_pinjam`, `tgl_kembali`) VALUES
+(1, 'Terminal', 'Budi Serizawa', 'budi_kun', 'XI RPL 2', 10, '12 November 2018 - 07:30 ', '12 November 2018 - 16:00 '),
+(2, 'Terminal', 'Adlu Bagus I.', 'adlubagus94', 'XII RPL 1', 2, '10 November 2018 - 15:00 ', '10 November 2018 - 16:00 '),
+(3, 'Terminal', 'Bagus Irawan', 'bagusi', 'X TKJ 3', 2, '12 November 2018 - 12:35 ', '12 November 2018 - 16:10 '),
+(4, 'LCD', 'Bagus Irawan', 'bagusi', 'X TKJ 3', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
+(5, 'LCD', 'Budi Serizawa', 'budi_kun', 'XI RPL 2', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
+(6, 'LCD', 'Adlu Bagus I.', 'adlubagus94', 'XII RPL 1', 1, '12 November 2018 - 07:30 ', '12 November 2018 - 10:00 '),
+(7, 'Speaker kecil', 'Adlu Bagus I.', 'adlubagus94', 'XII RPL 1', 2, '13 November 2018 - 10:00 ', '13 November 2018 - 12:00 '),
+(8, 'LCD', 'user test', 'usertest123', 'xii rpl', 1, '20 November 2018 - 16:00 ', '21 November 2018 - 13:25 ');
 
 -- --------------------------------------------------------
 

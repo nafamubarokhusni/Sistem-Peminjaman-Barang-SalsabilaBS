@@ -6,6 +6,7 @@
 		$data_pinjam  		 = mysqli_fetch_array($query_search_pinjam);
 		$nama_barang  		 = $data_pinjam['nama_barang'];
 		$peminjam			 = $data_pinjam['peminjam'];
+		$username			 = $data_pinjam['username'];
 		$level				 = $data_pinjam['level'];
 		$jml_barang			 = $data_pinjam['jml_barang'];
 		$tgl_pinjam			 = $data_pinjam['tgl_pinjam'];
@@ -14,7 +15,7 @@
 		$query_search_barang = mysqli_query($conn, "SELECT * FROM tbl_barang WHERE nama_barang = '$nama_barang'");
 		$data_search_barang  = mysqli_fetch_array($query_search_barang);
 		if($query_search_barang){		
-			$query_request_kembali = mysqli_query($conn, "INSERT INTO tbl_req_kembali (nama_barang, peminjam, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang', '$peminjam', '$level', '$jml_barang', '$tgl_pinjam', '$tgl_kembali')");
+			$query_request_kembali = mysqli_query($conn, "INSERT INTO tbl_req_kembali (nama_barang, peminjam, username, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang', '$peminjam', '$username', '$level', '$jml_barang', '$tgl_pinjam', '$tgl_kembali')");
 			if($query_request_kembali){
 				$query_delete_pinjam = mysqli_query($conn, "DELETE FROM tbl_pinjam WHERE id='$id'");
 				if($query_delete_pinjam){

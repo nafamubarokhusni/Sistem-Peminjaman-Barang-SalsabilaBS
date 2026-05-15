@@ -88,6 +88,7 @@
                         <th>No.</th>
                         <th>Nama Barang</th>
                         <th>Nama Peminjam</th>
+                        <th>Username</th>
                         <th>Jabatan/Kelas</th>
                         <th>Jml Barang</th>
                         <th>Tgl Pinjam</th>
@@ -105,6 +106,7 @@
                                     $id          = $data['id'];
                                     $nama_barang = $data['nama_barang'];
                                     $peminjam    = $data['peminjam'];
+                                    $username    = $data['username'];
                                     $level       = $data['level'];
                                     $jml_barang  = $data['jml_barang'];
                                     $tgl_pinjam  = $data['tgl_pinjam'];
@@ -114,6 +116,7 @@
                                     <td><?php echo $no;?></td>
                                     <td><?php echo $nama_barang;?></td>
                                     <td><?php echo $peminjam;?></td>
+                                    <td><?php echo $username;?></td>
                                     <td><?php echo $level?></td>
                                     <td><?php echo $jml_barang;?></td>
                                     <td><?php echo $tgl_pinjam;?></td>

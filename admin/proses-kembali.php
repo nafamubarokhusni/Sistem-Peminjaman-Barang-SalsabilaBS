@@ -22,6 +22,7 @@
 		}
 		$nama_barang			  = $data['nama_barang'];
 		$peminjam		  		  = $data['peminjam'];
+		$username				  = $data['username'];
 		$level			  		  = $data['level'];
 		$jml_barang		   		  = $data['jml_barang'];
 		$tgl_pinjam	  	  		  = $data['tgl_pinjam'];
@@ -34,11 +35,11 @@
 		if($data_search_barang){
 			$update_stok = mysqli_query($conn, "UPDATE tbl_barang SET stok_barang = '$stok_barang' WHERE nama_barang = '$nama_barang'");
 			if($update_stok){
-				if(mysqli_query($conn, "INSERT INTO tbl_transaksi (nama_barang, peminjam, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang', '$peminjam', '$level', '$jml_barang', '$tgl_pinjam', '$tgl_kembali')")){
+				if(mysqli_query($conn, "INSERT INTO tbl_transaksi (nama_barang, peminjam, username, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang', '$peminjam', '$username', '$level', '$jml_barang', '$tgl_pinjam', '$tgl_kembali')")){
 					if(mysqli_query($conn, "DELETE FROM $table WHERE id='$id'")){
-						$konten = $konten_prefix . $jml_barang." buah ".$nama_barang.". Username: ".$peminjam;
+						$konten = $konten_prefix . $jml_barang." buah ".$nama_barang.". Username: ".$username;
 							
-						if(mysqli_query($conn, "INSERT INTO pemberitahuan (username, konten, status) VALUES ('$peminjam', '$konten', 'kembali')")){
+						if(mysqli_query($conn, "INSERT INTO pemberitahuan (username, konten, status) VALUES ('$username', '$konten', 'kembali')")){
 							echo "<script>alert('Berhasil Memproses Pengembalian Barang');</script>";
 							header('location: barang-dipinjam.php');
 						}else{
