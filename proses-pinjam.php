@@ -32,7 +32,7 @@
 					<label>Nama Peminjam</label>
 					<input class="form-control" type="" name="nama_peminjam" required="">
 					<label>Kelas/Jabatan</label>
-					<input class="form-control" type="" name="level" required>
+					<input class="form-control" type="" name="level" required value="<?php echo $_GET['level'];?>" readonly>
 					<label>Nama Barang</label>
 					<input class="form-control" type="" name="nama_barang" required readonly value="<?php echo $data['nama_barang'];?>">
 					<label>Jumlah barang</label>

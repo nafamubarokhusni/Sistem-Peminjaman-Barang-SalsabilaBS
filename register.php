@@ -19,15 +19,17 @@
 	<link rel="stylesheet" type="text/css" href="tambahan/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="tambahan/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="tambahan/font-awesome/css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/register-style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 </head>
-<body  style="background-image: url('') !important;">
+<body>
 	<div class="container">
 		<div class='row'>
 			<div class="col-md-4"></div>
-			<div class="col-md-4 form-register-container">
+			<div class="col-md-4 form-register-container card-academic" style="padding: 30px; margin-top: 50px;">
 				<h2 class="">Registrasi Akun</h2>
 				<form action="" method="post">
 					<label>Nama</label>
@@ -36,11 +38,23 @@
 					<input class="form-control" type="" name="username" required>
 					<label>Password</label>
 					<input class="form-control" type="password" name="password" required>
-					<label>Kelas</label>
-					<input class="form-control"type="" name="level" required><br>
+					<label>Jabatan/Kelas</label>
+					<select class="form-control" name="level" required>
+						<option value="" disabled selected>Pilih Jabatan/Kelas</option>
+						<option value="Admin">Admin</option>
+						<option value="Guru">Guru</option>
+						<option value="Manajemen">Manajemen</option>
+						<option value="Eksternal">Eksternal</option>
+						<option value="Kelas 7">Kelas 7</option>
+						<option value="Kelas 8">Kelas 8</option>
+						<option value="Kelas 9">Kelas 9</option>
+						<option value="Kelas 10">Kelas 10</option>
+						<option value="Kelas 11">Kelas 11</option>
+						<option value="Kelas 12">Kelas 12</option>
+					</select><br>
 					<input type="checkbox" name="" required> Saya setuju dengan <a href="#">syarat dan ketentuan</a>.
-					<button type="submit" name="daftar" class="btn btn-success" style="margin-top: 20px;">DAFTAR</button>
-					<a href="index.php" class="btn btn-danger" style="margin-top: 20px; float:right">BATAL</a>
+					<button type="submit" name="daftar" class="btn btn-primary-academic" style="margin-top: 20px;">DAFTAR</button>
+					<a href="index.php" class="btn btn-outline-primary-academic" style="margin-top: 20px; float:right">BATAL</a>
 				</form>
 			</div>
 		</div>

@@ -8,8 +8,11 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./">Peminjaman Barang Sekolah</a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./" style="display:flex; align-items:center; gap:10px; font-size:16px;">
+                    <img src="../assets/img/logo.png" alt="Logo" style="height:30px; width:auto; margin:0;">
+                    <span style="color: #fff;">Admin Panel</span>
+                </a>
+                <a class="navbar-brand hidden" href="./"><img src="../assets/img/logo.png" alt="Logo" style="height:30px; width:auto;"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">

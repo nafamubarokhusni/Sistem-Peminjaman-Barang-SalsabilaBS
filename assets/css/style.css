@@ -1,0 +1,156 @@
+:root {
+  /* Colors */
+  --color-primary: #00796b; /* Deep Teal */
+  --color-secondary: #fbc02d; /* Yellow-Gold */
+  --color-tertiary: #7ad7c6; /* Bright Teal Accent */
+  --color-deep-forest: #004d40;
+  
+  --color-surface: #f8f9fa;
+  --color-surface-white: #ffffff;
+  
+  --color-text-primary: #1a2e2c;
+  --color-text-secondary: #546e7a;
+  
+  /* Typography */
+  --font-family-body: 'Source Sans 3', sans-serif;
+  --font-family-heading: 'Hanken Grotesk', sans-serif;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem;  /* 8px */
+  --radius-lg: 1rem;    /* 16px */
+  --radius-xl: 1.5rem;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-level-1: 0 4px 20px rgba(0, 121, 107, 0.15);
+  --shadow-level-2: 0 8px 30px rgba(0, 121, 107, 0.20);
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-family-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: var(--font-family-heading);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Header & Navbar */
+.bg-deep-teal {
+  background-color: var(--color-primary) !important;
+}
+
+.navbar-brand {
+  color: var(--color-surface-white) !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-brand img {
+  height: 40px; /* Adjust based on actual logo aspect ratio */
+  width: auto;
+}
+
+/* Typography Overrides */
+.text-primary-teal {
+  color: var(--color-primary) !important;
+}
+
+.text-secondary-gold {
+  color: var(--color-secondary) !important;
+}
+
+.text-muted {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Buttons */
+.btn {
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary-academic {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface-white);
+}
+
+.btn-primary-academic:hover {
+  background-color: var(--color-deep-forest);
+  border-color: var(--color-deep-forest);
+  color: var(--color-surface-white);
+}
+
+.btn-secondary-academic {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: #6f5100;
+}
+
+.btn-secondary-academic:hover {
+  background-color: #f8bd2a;
+  border-color: #f8bd2a;
+}
+
+.btn-outline-primary-academic {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: transparent;
+}
+
+.btn-outline-primary-academic:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface-white);
+}
+
+/* Cards */
+.card-academic {
+  border-radius: var(--radius-lg);
+  border: none;
+  background-color: var(--color-surface-white);
+  box-shadow: var(--shadow-level-1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-academic:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-level-2);
+}
+
+.card-academic img {
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  object-fit: cover;
+  width: 100% !important; /* Override inline styles */
+  margin: 0 !important;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: var(--radius-md);
+  border: 1px solid #bdc9c5;
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 121, 107, 0.25);
+}
+
+/* Jumbotron */
+.jumbotron-academic {
+  background-color: var(--color-surface-white);
+  border-bottom: 1px solid var(--color-surface);
+  padding: 4rem 2rem;
+}

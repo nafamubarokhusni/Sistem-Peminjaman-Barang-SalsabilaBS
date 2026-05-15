@@ -83,7 +83,7 @@ CREATE TABLE `tbl_pinjam` (
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `level` varchar(50) NOT NULL,
+  `level` enum('Admin','Guru','Manajemen','Eksternal','Kelas 7','Kelas 8','Kelas 9','Kelas 10','Kelas 11','Kelas 12') NOT NULL,
   `jml_barang` int(50) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
   `tgl_kembali` varchar(50) NOT NULL
@@ -100,7 +100,7 @@ CREATE TABLE `tbl_request` (
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `level` varchar(50) NOT NULL,
+  `level` enum('Admin','Guru','Manajemen','Eksternal','Kelas 7','Kelas 8','Kelas 9','Kelas 10','Kelas 11','Kelas 12') NOT NULL,
   `jml_barang` int(11) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
   `tgl_kembali` varchar(50) NOT NULL
@@ -117,7 +117,7 @@ CREATE TABLE `tbl_req_kembali` (
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `level` varchar(50) NOT NULL,
+  `level` enum('Admin','Guru','Manajemen','Eksternal','Kelas 7','Kelas 8','Kelas 9','Kelas 10','Kelas 11','Kelas 12') NOT NULL,
   `jml_barang` int(11) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
   `tgl_kembali` varchar(50) NOT NULL
@@ -134,7 +134,7 @@ CREATE TABLE `tbl_transaksi` (
   `nama_barang` varchar(50) NOT NULL,
   `peminjam` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `level` varchar(50) NOT NULL,
+  `level` enum('Admin','Guru','Manajemen','Eksternal','Kelas 7','Kelas 8','Kelas 9','Kelas 10','Kelas 11','Kelas 12') NOT NULL,
   `jml_barang` int(11) NOT NULL,
   `tgl_pinjam` varchar(50) NOT NULL,
   `tgl_kembali` varchar(50) NOT NULL
@@ -145,14 +145,14 @@ CREATE TABLE `tbl_transaksi` (
 --
 
 INSERT INTO `tbl_transaksi` (`id`, `nama_barang`, `peminjam`, `username`, `level`, `jml_barang`, `tgl_pinjam`, `tgl_kembali`) VALUES
-(1, 'Terminal', 'Budi Serizawa', 'budi_kun', 'XI RPL 2', 10, '12 November 2018 - 07:30 ', '12 November 2018 - 16:00 '),
-(2, 'Terminal', 'Adlu Bagus I.', 'adlubagus94', 'XII RPL 1', 2, '10 November 2018 - 15:00 ', '10 November 2018 - 16:00 '),
-(3, 'Terminal', 'Bagus Irawan', 'bagusi', 'X TKJ 3', 2, '12 November 2018 - 12:35 ', '12 November 2018 - 16:10 '),
-(4, 'LCD', 'Bagus Irawan', 'bagusi', 'X TKJ 3', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
-(5, 'LCD', 'Budi Serizawa', 'budi_kun', 'XI RPL 2', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
-(6, 'LCD', 'Adlu Bagus I.', 'adlubagus94', 'XII RPL 1', 1, '12 November 2018 - 07:30 ', '12 November 2018 - 10:00 '),
-(7, 'Speaker kecil', 'Adlu Bagus I.', 'adlubagus94', 'XII RPL 1', 2, '13 November 2018 - 10:00 ', '13 November 2018 - 12:00 '),
-(8, 'LCD', 'user test', 'usertest123', 'xii rpl', 1, '20 November 2018 - 16:00 ', '21 November 2018 - 13:25 ');
+(1, 'Terminal', 'Budi Serizawa', 'budi_kun', 'Kelas 11', 10, '12 November 2018 - 07:30 ', '12 November 2018 - 16:00 '),
+(2, 'Terminal', 'Adlu Bagus I.', 'adlubagus94', 'Kelas 12', 2, '10 November 2018 - 15:00 ', '10 November 2018 - 16:00 '),
+(3, 'Terminal', 'Bagus Irawan', 'bagusi', 'Kelas 10', 2, '12 November 2018 - 12:35 ', '12 November 2018 - 16:10 '),
+(4, 'LCD', 'Bagus Irawan', 'bagusi', 'Kelas 10', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
+(5, 'LCD', 'Budi Serizawa', 'budi_kun', 'Kelas 11', 1, '14 November 2018 - 09:00 ', '14 November 2018 - 11:30 '),
+(6, 'LCD', 'Adlu Bagus I.', 'adlubagus94', 'Kelas 12', 1, '12 November 2018 - 07:30 ', '12 November 2018 - 10:00 '),
+(7, 'Speaker kecil', 'Adlu Bagus I.', 'adlubagus94', 'Kelas 12', 2, '13 November 2018 - 10:00 ', '13 November 2018 - 12:00 '),
+(8, 'LCD', 'user test', 'usertest123', 'Kelas 12', 1, '20 November 2018 - 16:00 ', '21 November 2018 - 13:25 ');
 
 -- --------------------------------------------------------
 
@@ -165,7 +165,7 @@ CREATE TABLE `user` (
   `nama` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `level` varchar(30) NOT NULL
+  `level` enum('Admin','Guru','Manajemen','Eksternal','Kelas 7','Kelas 8','Kelas 9','Kelas 10','Kelas 11','Kelas 12') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -173,11 +173,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`) VALUES
-(2, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(3, 'Adlu Bagus I.', 'adlubagus94', 'a193df56eb6d42b05bfdba808eb2de35', 'XII RPL 1'),
-(4, 'Budi Serizawa', 'budi_kun', 'e10adc3949ba59abbe56e057f20f883e', 'XI RPL 2'),
-(5, 'Bagus Irawan', 'bagusi', 'e10adc3949ba59abbe56e057f20f883e', 'X TKJ 3'),
-(6, 'user test', 'usertest123', 'e10adc3949ba59abbe56e057f20f883e', 'xii rpl ');
+(2, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin'),
+(3, 'Adlu Bagus I.', 'adlubagus94', 'a193df56eb6d42b05bfdba808eb2de35', 'Kelas 12'),
+(4, 'Budi Serizawa', 'budi_kun', 'e10adc3949ba59abbe56e057f20f883e', 'Kelas 11'),
+(5, 'Bagus Irawan', 'bagusi', 'e10adc3949ba59abbe56e057f20f883e', 'Kelas 10'),
+(6, 'user test', 'usertest123', 'e10adc3949ba59abbe56e057f20f883e', 'Kelas 12');
 
 --
 -- Indexes for dumped tables

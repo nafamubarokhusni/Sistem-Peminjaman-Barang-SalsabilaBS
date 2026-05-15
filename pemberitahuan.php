@@ -5,17 +5,20 @@
 			<link rel="stylesheet" type="text/css" href="tambahan/bootstrap/dist/css/bootstrap.css">
 			<link rel="stylesheet" type="text/css" href="tambahan/bootstrap/dist/css/bootstrap.min.css">
 			<link rel="stylesheet" type="text/css" href="tambahan/font-awesome/css/font-awesome.css">
+			<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+			<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 			<link rel="stylesheet" type="text/css" href="assets/css/register-style.css">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		</head>
-		<body  style="background-image: url('') !important;">
+		<body>
 			<div class="container">
 				<div class='row'>
 					<div class="col-md-3 " style="padding-top: 20px;">
 						
 					</div>
-					<div class="col-md-5 form-register-container">
+					<div class="col-md-5 form-register-container card-academic" style="padding: 30px; margin-top: 50px; margin-bottom: 50px;">
+						<h2 class="mb-4">Pemberitahuan</h2>
 						<?php
 							include 'config.php';
 							$username = $_GET['username'];
@@ -45,7 +48,7 @@
 							}
 						?>
 						
-						<a href="index.php" class="btn btn-success">KEMBALI</a>
+						<a href="index.php" class="btn btn-primary-academic mt-3">KEMBALI</a>
 					</div>
 				</div>
 			</div>

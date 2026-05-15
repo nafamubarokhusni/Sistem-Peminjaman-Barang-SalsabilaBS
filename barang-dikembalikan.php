@@ -11,20 +11,22 @@
 	<link rel="stylesheet" type="text/css" href="tambahan/bootstrap-4.1.3/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/register-style.css">
 	<link rel="stylesheet" type="text/css" href="tambahan/font-awesome/css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
-<body  style="background-image: url('') !important;">
+<body>
 	<div class="container">
 		<div class='row'>
 			<div class="col-md-2" style="padding-top: 20px;">
-				<a href="index.php" class="btn btn-info btn-icon btn-sm">
+				<a href="index.php" class="btn btn-outline-primary-academic btn-icon btn-sm">
 					<i class="fa fa-arrow-left"></i>
 				</a>
 			</div>
-			<div class="col-md-8 form-register-container">
-				<h2>Data Barang Dikembalikan</h2>
+			<div class="col-md-8 form-register-container card-academic" style="padding: 30px; margin-top: 50px; margin-bottom: 50px;">
+				<h2 class="mb-4">Data Barang Dikembalikan</h2>
 				<table class="table table-bordered table-super-condensed">
-					<thead>
+					<thead class="bg-deep-teal text-white">
 						<tr>
 							<th>No</th>
 							<th>Nama Barang</th>

@@ -9,10 +9,10 @@
 		if($query_username){
 			$data = mysqli_fetch_array($query_username);
 			if($password == $data['password']){
-				echo $_SESSION['username'] = $data['username'];
-				echo $_SESSION['name'] = $data['nama'];
+				$_SESSION['username'] = $data['username'];
+				$_SESSION['name'] = $data['nama'];
 				$_SESSION['level'] = $data['level'];
-				if($data['level'] == 'admin'){
+				if($data['level'] == 'Admin'){
 					header('location: admin/index.php');
 				}else{
 					header('location: index.php');

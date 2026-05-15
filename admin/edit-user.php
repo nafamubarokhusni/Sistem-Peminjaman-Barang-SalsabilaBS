@@ -92,6 +92,8 @@
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="assets/scss/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/admin-custom.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
@@ -159,9 +161,15 @@
 
                                 <div class="form-group">
                                     <label for="level" class="form-control-label">Jabatan / Kelas</label>
-                                    <input type="text" id="level" name="level" class="form-control"
-                                           value="<?php echo htmlspecialchars($u_level); ?>"
-                                           placeholder="Kosongkan jika tidak ingin mengubah">
+                                    <select id="level" name="level" class="form-control">
+                                        <?php 
+                                            $options = ['Admin', 'Guru', 'Manajemen', 'Eksternal', 'Kelas 7', 'Kelas 8', 'Kelas 9', 'Kelas 10', 'Kelas 11', 'Kelas 12'];
+                                            foreach($options as $opt) {
+                                                $selected = ($u_level == $opt) ? 'selected' : '';
+                                                echo "<option value=\"$opt\" $selected>$opt</option>";
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
 
                                 <button type="submit" class="btn btn-success" name="edit-user">

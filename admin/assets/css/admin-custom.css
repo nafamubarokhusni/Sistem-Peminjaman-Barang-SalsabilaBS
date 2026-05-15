@@ -1,0 +1,145 @@
+/* Academic Heritage Overrides for Sufee Admin */
+
+:root {
+  --color-primary: #00796b; /* Deep Teal */
+  --color-secondary: #fbc02d; /* Yellow-Gold */
+  --color-tertiary: #7ad7c6; /* Bright Teal Accent */
+  --color-deep-forest: #004d40;
+  --color-surface: #f8f9fa;
+  --color-surface-white: #ffffff;
+  --color-text-primary: #1a2e2c;
+  --color-text-secondary: #546e7a;
+  
+  --font-family-body: 'Source Sans 3', sans-serif;
+  --font-family-heading: 'Hanken Grotesk', sans-serif;
+  
+  --shadow-level-1: 0 4px 20px rgba(0, 121, 107, 0.15);
+}
+
+/* Typography */
+body, p, span, td, th {
+  font-family: var(--font-family-body) !important;
+  color: var(--color-text-primary);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: var(--font-family-heading) !important;
+}
+
+/* Sidebar Overrides */
+aside.left-panel {
+  background-color: var(--color-deep-forest) !important;
+}
+
+.navbar {
+  background-color: var(--color-deep-forest) !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--color-surface-white) !important;
+}
+
+.navbar .navbar-nav li > a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar .navbar-nav li > a:hover,
+.navbar .navbar-nav li.active > a {
+  color: var(--color-secondary) !important;
+  background-color: transparent !important;
+}
+
+.navbar .navbar-nav li > a .menu-icon {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar .navbar-nav li:hover > a .menu-icon,
+.navbar .navbar-nav li.active > a .menu-icon {
+  color: var(--color-secondary) !important;
+}
+
+/* Header Overrides */
+header.header {
+  background-color: var(--color-surface-white) !important;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.header-menu .user-area > a h5 {
+  color: var(--color-primary) !important;
+}
+
+/* Card Overrides */
+.card {
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-level-1) !important;
+  border: none !important;
+}
+
+.card-header {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+  background-color: var(--color-surface) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.card-body {
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+/* Specific Dashboard Widget Cards Override */
+.card.text-white.bg-flat-color-1,
+.card.text-white.bg-flat-color-2,
+.card.text-white.bg-flat-color-3,
+.card.text-white.bg-flat-color-4 {
+  background-color: var(--color-primary) !important;
+}
+
+.card.text-white,
+.card.text-white p,
+.card.text-white span,
+.card.text-white h1,
+.card.text-white h2,
+.card.text-white h3,
+.card.text-white h4,
+.card.text-white h5,
+.card.text-white h6 {
+  color: var(--color-surface-white) !important;
+}
+
+/* Button Overrides */
+.btn-success {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-surface-white) !important;
+}
+
+.btn-success:hover {
+  background-color: var(--color-deep-forest) !important;
+  border-color: var(--color-deep-forest) !important;
+}
+
+.btn-info {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+  color: #6f5100 !important;
+}
+
+.btn-info:hover {
+  background-color: #f8bd2a !important;
+  border-color: #f8bd2a !important;
+}
+
+.btn-danger {
+  color: var(--color-surface-white) !important;
+}
+
+/* Form Controls */
+.form-control {
+  border-radius: 8px !important;
+}
+
+.form-control:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 121, 107, 0.25) !important;
+}
