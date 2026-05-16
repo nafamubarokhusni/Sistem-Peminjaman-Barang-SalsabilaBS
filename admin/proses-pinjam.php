@@ -27,7 +27,7 @@
 				if($update_stok){
 					if(mysqli_query($conn, "INSERT INTO tbl_pinjam (nama_barang, peminjam, username, level, jml_barang, tgl_pinjam, tgl_kembali) VALUES ('$nama_barang_request', '$peminjam_request', '$username_request', '$level_request', '$jml_barang_request', '$tgl_pinjam_request', '$tgl_kembali_request')")){
 						if(mysqli_query($conn, "DELETE FROM tbl_request WHERE id = '$id_request'")){
-							$konten = "Permintaan Peminjaman Barang Anda Telah di Terima. ".$jml_barang_request." buah ".$nama_barang_request.". Username: ".$username_request.". Silahkan ke bagian Sarpras untuk mengampil barang";
+							$konten = "Permintaan Peminjaman Barang Anda Telah di Terima. ".$jml_barang_request." buah ".$nama_barang_request.". Peminjam: ".$peminjam_request.". Silahkan ke bagian Sarpras untuk mengampil barang";
 							if(mysqli_query($conn, "INSERT INTO pemberitahuan (username, konten, status) VALUES ('$username_request', '$konten', 'terima')")){
 								echo "<script>alert('Berhasil Menerima Permintaan');</script>";
 								echo "<script>window.history.back();</script>";

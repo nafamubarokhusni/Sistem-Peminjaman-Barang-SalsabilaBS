@@ -28,7 +28,7 @@
 					<label>Password</label>
 					<input class="form-control" type="password" name="password" required>
 					<button type="submit" name="login" class="btn btn-primary-academic" style="margin-top: 20px; width: 100%;">LOGIN</button><br>
-					<label style="margin-top: 15px;">Tidak Punya Akun?</label> <a href="register.php" class="text-secondary-gold">Daftar</a>
+					<!-- <label style="margin-top: 15px;">Tidak Punya Akun?</label> <a href="register.php" class="text-secondary-gold">Daftar</a> -->
 				</form>
 			</div>
 		</div>

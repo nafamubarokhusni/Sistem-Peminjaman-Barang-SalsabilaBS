@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include 'config.php';
 	if(!empty($_GET['username']) && $_GET['username'] != ""){
 		//echo $_GET['username'];
@@ -30,9 +31,9 @@
 					<label>Username</label>
 					<input class="form-control" type="" name="username" required  value="<?php echo $_GET['username'];?>" readonly>
 					<label>Nama Peminjam</label>
-					<input class="form-control" type="" name="nama_peminjam" required="">
+					<input class="form-control" type="" name="nama_peminjam" required>
 					<label>Kelas/Jabatan</label>
-					<input class="form-control" type="" name="level" required value="<?php echo $_GET['level'];?>" readonly>
+					<input class="form-control" type="" name="level" required value="<?php echo isset($_SESSION['level']) ? $_SESSION['level'] : ''; ?>" readonly>
 					<label>Nama Barang</label>
 					<input class="form-control" type="" name="nama_barang" required readonly value="<?php echo $data['nama_barang'];?>">
 					<label>Jumlah barang</label>

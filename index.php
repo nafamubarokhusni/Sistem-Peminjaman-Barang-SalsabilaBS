@@ -49,7 +49,7 @@
 					<input class="form-control" type="password" name="password" placeholder="Password" required>
 				</div>
 				<button type="submit" name="login" class="btn btn-primary-academic btn-block">Login</button>
-				<p class="text-center mt-3 text-muted">Tidak punya akun? <a href="register.php" style="color: var(--color-primary); font-weight: 600;">Daftar</a></p>
+				<!-- <p class="text-center mt-3 text-muted">Tidak punya akun? <a href="register.php" style="color: var(--color-primary); font-weight: 600;">Daftar</a></p> -->
 			</form>
 	      </div>
 	    </div>
